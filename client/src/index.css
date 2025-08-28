@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 10%, 4%);
+  --foreground: hsl(210, 40%, 98%);
+  --card: hsl(240, 10%, 9%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --popover: hsl(240, 10%, 9%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --primary: hsl(262, 83%, 58%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(43, 96%, 56%);
+  --secondary-foreground: hsl(240, 10%, 4%);
+  --muted: hsl(240, 6%, 10%);
+  --muted-foreground: hsl(240, 5%, 65%);
+  --accent: hsl(188, 95%, 38%);
+  --accent-foreground: hsl(210, 40%, 98%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(240, 6%, 20%);
+  --input: hsl(240, 6%, 20%);
+  --ring: hsl(262, 83%, 58%);
+  --radius: 0.75rem;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+}
+
+.dark {
+  --background: hsl(240, 10%, 4%);
+  --foreground: hsl(210, 40%, 98%);
+  --card: hsl(240, 10%, 9%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --popover: hsl(240, 10%, 9%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --primary: hsl(262, 83%, 58%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(43, 96%, 56%);
+  --secondary-foreground: hsl(240, 10%, 4%);
+  --muted: hsl(240, 6%, 10%);
+  --muted-foreground: hsl(240, 5%, 65%);
+  --accent: hsl(188, 95%, 38%);
+  --accent-foreground: hsl(210, 40%, 98%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(240, 6%, 20%);
+  --input: hsl(240, 6%, 20%);
+  --ring: hsl(262, 83%, 58%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  /* Custom scrollbar styles for carousel */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Smooth scrolling for carousel */
+  .overflow-x-auto {
+    scroll-behavior: smooth;
+  }
+
+  html {
+    @apply dark;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply transition-colors duration-200;
+  }
+
+  .content-card {
+    @apply transition-all duration-300 cursor-pointer;
+  }
+
+  .content-card:hover {
+    @apply scale-105;
+  }
+
+  .category-card {
+    @apply transition-all duration-300 cursor-pointer;
+  }
+
+  .category-card:hover {
+    @apply scale-105;
+  }
+
+  .character-card {
+    @apply transition-all duration-300 border-border;
+  }
+
+  .character-card:hover {
+    border-color: hsl(var(--primary) / 0.5);
+  }
+
+  .category-detailed {
+    @apply transition-all duration-300 border-border;
+  }
+
+  .category-detailed:hover {
+    border-color: hsl(var(--primary) / 0.5);
+  }
+}
